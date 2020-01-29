@@ -3,6 +3,14 @@ import { Container, Row, Col } from 'reactstrap';
 import { Todocard } from '../components/Todocard';
 import '../styles.css';
 
+const [timeLeft, setTime] = useState(handleTime());
+
+useEffect(() => {
+  setTimeout(() => {
+      setTime(handleTime());
+  }, 1000);
+});
+
 const handleTime = () => {
     const diff = +new Date("2020-05-07") - +new Date();
     let timeLeft = {};
