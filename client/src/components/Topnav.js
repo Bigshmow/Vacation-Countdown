@@ -1,5 +1,5 @@
 import React from "react";
-import {Nav,Navbar,NavbarBrand,NavItem,NavLink} from 'reactstrap';
+import {Nav,Navbar,NavbarBrand,NavLink} from 'reactstrap';
 import "../styles.css";
 
 export const Topnav = () => {
