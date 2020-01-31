@@ -7,7 +7,7 @@ export const Todocard = (props) => {
     return (
         <Fragment>
             <div className="todoCard">
-                <Card className="todoCard" style={{ borderColor: '#333' }}>
+                <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
                     <h1 className="todo text-center">To-Do</h1>
                     <h2>{props.name}</h2>
                     <ul>
