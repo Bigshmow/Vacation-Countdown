@@ -6,6 +6,7 @@ export const Todocard = (props) => {
     return (
         <Fragment>
             <Card className="todoCard">
+                <h1 className="text-center">To-Do</h1>
                 <h2>{props.name}</h2>
                 <ul>
                    <li>{props.list}</li>
