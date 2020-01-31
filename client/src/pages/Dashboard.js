@@ -5,6 +5,8 @@ import '../styles.css';
 
 export const Dashboard = props => {
 
+const Todos = require("../todos.json")
+
 const handleTime = () => {
     const diff = +new Date("2020-05-07") - +new Date();
     let timeLeft = {};
@@ -51,12 +53,14 @@ Object.keys(timeLeft).forEach(interval => {
                 </Col>
             </Row>
             <Row>
+                    {Todos.map((todo) =>   
                 <Col xs='12' md='4'>
-                    <Todocard 
-                    name="Both"
-                    list="stuff"
-                    />
+                        <Todocard 
+                        name={todo.name}
+                        list={todo.list}
+                        />
                 </Col>
+                    )}
             </Row>
         </Container>
     )
