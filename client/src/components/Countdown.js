@@ -43,7 +43,7 @@ export const Countdown = props => {
       return (
         <Col xs='12'>
             <h1>Countdown to Vallarta!!</h1>
-            {timer.length ? timer : <span>Puerto Vallarta here we come!!</span>}
+            <h3>{timer.length ? timer : <span>Puerto Vallarta here we come!!</span>}</h3>
         </Col>
       )
 }

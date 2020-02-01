@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Card, Col } from "reactstrap";
+import { Card, Col, FormGroup, Label, Input } from "reactstrap";
 import "../styles.css";
 
 export const Todocard = (props) => {
@@ -15,8 +15,13 @@ const Todos = require("../todos.json")
                         <h1 className="todo text-center">To-Do</h1>
                         <h2>Name: {todo.name}</h2>
                         <ul>
-                        {todo.list.map( (item, i) => 
-                            <li key={i}>{item}</li>
+                        {todo.list.map( (item, i) =>
+                            <FormGroup check key={i}>
+                                <Label check>
+                                    <Input type="checkbox" />{' '}
+                                    {item}
+                                </Label>
+                            </FormGroup> 
                             )}
                         </ul>
                     </Card>
