@@ -13,9 +13,11 @@ const Todos = require("../todos.json")
                 <div className="todoCard">
                     <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
                         <h1 className="todo text-center">To-Do</h1>
-                        <h2>Name: {props.name}</h2>
+                        <h2>Name: {todo.name}</h2>
                         <ul>
-                        {props.list}
+                        {todo.list.map( (item, i) => 
+                            <li key={i}>{item}</li>
+                            )}
                         </ul>
                     </Card>
                 </div>
