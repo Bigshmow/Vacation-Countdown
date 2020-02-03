@@ -12,8 +12,7 @@ const Todos = require("../todos.json")
                 <Col xs='12' md='4' key={i}>
                 <div className="todoCard">
                     <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
-                        <h1 className="todo text-center">To-Do</h1>
-                        <h2>Name: {todo.name}</h2>
+                        <h1 className="todo text-center">To-Do: {todo.name}</h1>
                         <ul>
                         {todo.list.map( (item, i) =>
                             <FormGroup check key={i}>
