@@ -1,29 +1,46 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState} from "react";
 import { Button, Card, Col, FormGroup, Label, Input } from "reactstrap";
 import "../styles.css";
 
-const alertMe = () => {
-    alert("Working!!")
-}
+export const Todocard = (props) => {
 
 const loadTodos = () => {
     // psuedo for now
     // call getTodos, then set state
+    let allTodos = ["Both","Denise","Devin"];
+    return allTodos;
     // will need to change how we map
 }
 
+const [allTodos, setTodos] = useState(loadTodos());
+
+useEffect(() => {
+    setTodos(loadTodos());
+},[]);
+
+let todoTest = [];
+
+Object.keys(allTodos).forEach((todos,i) => {
+    todoTest.push(
+        <span key={i}>
+        {allTodos[todos]}
+      </span>
+    );
+});
+
 const handleListUpdate = () => {
+    alert("Working!!")
     // psuedo for now
-    // set state with new todo item for person id
+    // set state with new todos item for person id
     // call updateTodo and update state
 }
-
-export const Todocard = (props) => {
-
 const Todos = require("../todos.json")
 
     return (
         <Fragment>
+            {todoTest.map(name => 
+                console.log({name}))}
+
             {Todos.map((todo,i) => 
                 <Col xs='12' md='4' key={i} id={i}>
                 <div className="todoCard">
@@ -40,8 +57,8 @@ const Todos = require("../todos.json")
                             )}
                             <div className='d-flex justify-content-center'>
                             <Label for="taskAdd"></Label>
-                            <Input type="text" name="Add" id="taskAdd" placeholder="Add a new task" />
-                            <Button color="success" onClick={alertMe}>Save!</Button>
+                            <Input type="text" name="Add" id={"taskid" + i} placeholder="Add a new task" />
+                            <Button color="success" onClick={handleListUpdate}>Save!</Button>
                             </div>
                         </ul>
                     </Card>
