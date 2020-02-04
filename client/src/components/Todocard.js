@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState} from "react";
 import { Button, Card, Col, FormGroup, Label, Input } from "reactstrap";
+import API from "../utils/API";
 import "../styles.css";
 
 export const Todocard = (props) => {
@@ -32,7 +33,7 @@ const handleListUpdate = () => {
     alert("Working!!")
     // psuedo for now
     // set state with new todos item for person id
-    // call updateTodo and update state
+    // call addTodo and update state
 }
 const Todos = require("../todos.json")
 
