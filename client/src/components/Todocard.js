@@ -49,7 +49,7 @@ const Todos = require("../todos.json")
                         <h1 className="todo text-center">To-Do: {todo.name}</h1>
                         <ul>
                         {todo.list.map( (item, i) =>
-                            <FormGroup check>
+                            <FormGroup check key={i}>
                                 <Label check key={i}>
                                     <Input type="checkbox" />{' '}
                                     {item}
@@ -63,8 +63,8 @@ const Todos = require("../todos.json")
                             </div>
                         </ul>
                     </Card>
-                </div>
-
+                    </div>
+                    
                 </Col>
             )}
         </Fragment>
