@@ -4,8 +4,10 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
