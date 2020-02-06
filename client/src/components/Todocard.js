@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState} from "react";
 import { Button, Card, Col, FormGroup, Label, Input } from "reactstrap";
-// import API from "../utils/API";
+import API from "../utils/API";
 import "../styles.css";
 
 export const Todocard = (props) => {
@@ -29,12 +29,6 @@ Object.keys(allTodos).forEach((todos,i) => {
     );
 });
 
-const handleListUpdate = () => {
-    alert("Working!!")
-    // psuedo for now
-    // set state with new todos item for person id
-    // call addTodo and update state
-}
 const Todos = require("../todos.json")
 
     return (
@@ -56,11 +50,6 @@ const Todos = require("../todos.json")
                                 </Label>
                             </FormGroup>
                             )}
-                            <div className='d-flex justify-content-center'>
-                            <Label for="taskAdd"></Label>
-                            <Input type="text" name="Add" id={"taskid" + i} placeholder="Add a new task" />
-                            <Button color="success" onClick={handleListUpdate}>Save!</Button>
-                            </div>
                         </ul>
                     </Card>
                     </div>
