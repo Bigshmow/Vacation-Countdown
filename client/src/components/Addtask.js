@@ -14,7 +14,7 @@ export const Addtask = props => {
         alert("Added new task: " + newTask + " for " + newName)
         // call addTodo and update state
         API.addTodo(newName, newTask)
-        .then(window.location.href="/")
+        // .then(window.location.href="/")
     }
     return (
         <Fragment>

@@ -5,18 +5,12 @@ import "../styles.css";
 
 export const Todocard = (props) => {
 
-const loadTodos = () => {
-    // psuedo for now
-    // call getTodos, then set state
-    let allTodos = ["Both","Denise","Devin"];
-    return allTodos;
-    // will need to change how we map
-}
-
-const [allTodos, setTodos] = useState(loadTodos());
+const [allTodos, setTodos] = useState([]);
 
 useEffect(() => {
-    setTodos(loadTodos());
+    API.getTodos()
+        .then( res => setTodos(res.data))
+    // setTodos(loadTodos());
 },[]);
 
 let todoTest = [];
@@ -28,6 +22,8 @@ Object.keys(allTodos).forEach((todos,i) => {
       </span>
     );
 });
+
+console.log("all todo: " + todoTest);
 
 const Todos = require("../todos.json")
 

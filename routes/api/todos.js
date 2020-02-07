@@ -6,11 +6,14 @@ router.route("/")
   .get(todosController.findAll)
   .post(todosController.create);
 
-// Matches with "/api/todos/:id/:user"
+// Matches with "/api/todos/:name"
+router.route("/:name")
+  .get(todosController.findOne);
+
+// Matches with "/api/todos/:name/:task"
 router
-  .route("/:id")
+  .route("/:name/:task")
   .get(todosController.findById)
-  .put(todosController.update)
   .delete(todosController.remove);
 
 module.exports = router;

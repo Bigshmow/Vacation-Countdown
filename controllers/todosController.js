@@ -9,6 +9,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findOne: function(req, res) {
+      db.Todo
+        .findOne({name: req.params.name})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+  },
   findById: function(req, res) {
     db.Todo
       .findById(req.params.id)
@@ -18,12 +24,6 @@ module.exports = {
   create: function(req, res) {
     db.Todo
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  update: function(req, res) {
-    db.Todo
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
