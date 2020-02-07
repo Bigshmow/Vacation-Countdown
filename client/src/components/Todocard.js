@@ -29,8 +29,8 @@ const Todos = require("../todos.json")
 
     return (
         <Fragment>
-            {todoTest.map(name => 
-                console.log({name}))}
+            {todoTest.map(todos => 
+                console.log(todos.props.children))}
 
             {Todos.map((todo,i) => 
                 <Col xs='12' md='4' key={i} id={i}>
