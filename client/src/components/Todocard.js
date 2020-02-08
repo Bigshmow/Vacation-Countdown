@@ -34,7 +34,10 @@ useEffect(() => {
 },[]);
 
 const statePush = () => {
-    alert('alerting')
+    const thing = "thing";
+    let newArr = [...bothComp]
+    newArr.push(thing)
+    setBothC(newArr)
 }
 
 // const Todos = require("../todos.json")
