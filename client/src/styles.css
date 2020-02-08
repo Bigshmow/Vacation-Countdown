@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.bottomButton {
+  text-align: center;
+}
+
+.boxCard {
+  display: flex;
+  justify-content: space-between;
+}
+
 .mainRow {
   min-height: 25vh;
   display: flex;
@@ -13,13 +22,23 @@
   text-align: center;
 }
 
+.progCard {
+  width: 50%;
+  height: 30vh;
+  border-right: 1px solid black;
+}
+
+.compCard {
+  width: 50%;
+}
+
 .todo { 
   border-bottom: 1px solid black;
 }
 
 .todoCard {
+  display: flex;
   min-height: 40vh;
-  
 }
   .todoCard:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
