@@ -15,23 +15,23 @@ const [bothComp, setBothC ] = useState([]);
 const [deniseComp, setDeniseC ] = useState([]);
 const [devinComp, setDevinC ] = useState([]);
 
-useEffect(() => {
-    API.getTodos()
-        .then( res => setBothP(res.data[0].inProgress));
-    API.getTodos()
-        .then( res => setDeniseP(res.data[1].inProgress));
-    API.getTodos()
-        .then( res => setDevinP(res.data[2].inProgress)); 
-},[]);
+// useEffect(() => {
+//     API.getTodos()
+//         .then( res => setBothP(res.data[0].inProgress));
+//     API.getTodos()
+//         .then( res => setDeniseP(res.data[1].inProgress));
+//     API.getTodos()
+//         .then( res => setDevinP(res.data[2].inProgress)); 
+// },[]);
 
-useEffect(() => {
-    API.getTodos()
-        .then( res => setBothC(res.data[0].complete));
-    API.getTodos()
-        .then( res => setDeniseC(res.data[1].complete));
-    API.getTodos()
-        .then( res => setDevinC(res.data[2].complete)); 
-},[]);
+// useEffect(() => {
+//     API.getTodos()
+//         .then( res => setBothC(res.data[0].complete));
+//     API.getTodos()
+//         .then( res => setDeniseC(res.data[1].complete));
+//     API.getTodos()
+//         .then( res => setDevinC(res.data[2].complete)); 
+// },[]);
 
 const statePush = () => {
     const thing = "thing";
