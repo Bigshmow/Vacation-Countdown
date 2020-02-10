@@ -7,9 +7,9 @@
   * React
     * shying away from class usage to experiment and learn the useState and useEffect hooks
   * Express
-    * establish routes and middleware
-    * Axios for HTTP req
+    * easily establish router and middleware
+    * using Axios for HTTP req
   * MongoDB
-    * also utilizing Mongoose for modeling
+    * Mongoose for modeling
   
-## Work in progress...check back soon for universal application as it is currently geared towards y individual use!
+## Work in progress...check back soon for universal application as it is currently geared towards my individual use!
