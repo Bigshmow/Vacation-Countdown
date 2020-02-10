@@ -1,5 +1,5 @@
 # Vacation-Countdown
 
-## Little vacation countdown for Puerto Vallarta
+## Vacation countdown and to-do list builder
 
 ### Work in progress, check back soon!
