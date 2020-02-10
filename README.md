@@ -1,6 +1,4 @@
-# Vacation-Countdown
-
-## Vacation countdown and to-do list builder
+# Vacation-Countdown and to-do list builder
 
 ### This mobile focused application is designed to keep track of all your To-dos and inspire a sense of excitement with the countdown clock!
 
