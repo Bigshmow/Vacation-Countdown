@@ -10,7 +10,7 @@ export const Addtask = props => {
 
     const handleListUpdate = (name,task) => {
         API.addTodo(name,task)
-        // window.location = "/"
+        window.location = "/"
     }
 
     return (
