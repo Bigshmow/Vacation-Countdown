@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useState} from "react";
-import { Button, Card, Col, FormGroup, Label, Input } from "reactstrap";
+import React, { Fragment, useState} from "react";
+import { Button, Card, Col, FormGroup, Input } from "reactstrap";
 import API from "../utils/API";
 import "../styles.css";
 
