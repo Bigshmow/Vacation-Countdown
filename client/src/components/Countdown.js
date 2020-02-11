@@ -4,13 +4,14 @@ import '../styles.css';
 
 export const Countdown = props => {
     const handleTime = () => {
-        const diff = +new Date("2020-05-07") - +new Date();
+        const leaveDate = new Date('May 07, 2020 13:43:00 -0800')
+        const diff = leaveDate - +new Date();
         let timeLeft = {};
         
         if (diff > 0) {
             timeLeft = {
             days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-            hours: 8 + Math.floor((diff / (1000 * 60 * 60)) % 24),
+            hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
             minutes: Math.floor((diff / 1000 / 60) % 60),
             seconds: Math.floor((diff / 1000) % 60)
             };
