@@ -17,7 +17,7 @@ module.exports = {
   },
   update: function(req, res) {
       db.Todo
-        .updateOne({ name: "Both"}, {$set:{complete: "weeeeeerk"}})
+        .updateOne({ name: req.params.name}, {$push:{inProgress: req.params.task }})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },

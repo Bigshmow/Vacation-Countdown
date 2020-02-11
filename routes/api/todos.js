@@ -7,11 +7,11 @@ router.route("/")
   .post(todosController.create);
 
 // Matches with "/api/todos/:name"
-router.route("/:name")
-  .get(todosController.findOne);
+// router.route("/:name")
+//   .get(todosController.findOne);
 
 // Matches with "/api/todos/:name/:task"
-router.route("/")
+router.route("/:name/:task")
   .put(todosController.update);
 
 module.exports = router;

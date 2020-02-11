@@ -10,7 +10,7 @@ export default {
     return axios.delete("/api/todos/" + id);
   },
   // Adds a todo
-  addTodo: function() {
-    return axios.put("/api/todos");
+  addTodo: function(name,task) {
+    return axios.put("/api/todos/" + name + "/" + task);
   }
 };

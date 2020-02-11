@@ -5,17 +5,13 @@ import "../styles.css";
 
 export const Addtask = props => {
 
-    const [task, setTask] = useState("task")
-    const [name, setName] = useState("Both")
+    const [task, setTask] = useState("")
+    const [name, setName] = useState("")
 
-    const handleListUpdate = () => {
-        // psuedo for now
-        // set state with new todos item for person id
-        alert("Added new task: " + task + " for " + name)
-        // call addTodo and update state
-        API.addTodo()
-        // .then(window.location.href="/")
+    const handleListUpdate = (name,task) => {
+        API.addTodo(name,task)
     }
+    
     return (
         <Fragment>
             <Col xs='12' sm='4'>
@@ -25,16 +21,18 @@ export const Addtask = props => {
                         placeholder="Add a task: "
                         type="text"
                         value={task}
+                        name="task"
                         onChange={e => setTask(e.target.value)}
                         />
                         <Input
                         placeholder="For whom? "
                         type="text"
                         value={name}
+                        name="name"
                         onChange={e => setName(e.target.value)}
                         />
                 </FormGroup>
-                        <Button onClick={handleListUpdate} color="success" size="large"><h3>Add this task!</h3></Button>
+                        <Button onClick={e => handleListUpdate(name,task)} color="success" size="large"><h3>Add this task!</h3></Button>
                 </Card>
             </Col>
         </Fragment>
