@@ -12,5 +12,8 @@ export default {
   // Adds a todo
   addTodo: function(name,task) {
     return axios.put("/api/todos/" + name + "/" + task);
+  },
+  addComplete: function(name,task) {
+    return axios.put("/api/todos/" + name + "/" + task);
   }
 };

@@ -15,9 +15,15 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  updateProgress: function(req, res) {
       db.Todo
-        .updateOne({ name: req.params.name}, {$push:{inProgress: req.params.task }})
+        .updateOne({ name: req.params.name }, {$push:{inProgress: req.params.task }})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+  },
+  updateComplete: function (req, res) {
+      db.Todo
+        .updateOne({ name: req.params.name }, {$push:{complete: req.params.task}})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },

@@ -10,8 +10,9 @@ export const Addtask = props => {
 
     const handleListUpdate = (name,task) => {
         API.addTodo(name,task)
+        window.location = "/"
     }
-    
+
     return (
         <Fragment>
             <Col xs='12' sm='4'>
