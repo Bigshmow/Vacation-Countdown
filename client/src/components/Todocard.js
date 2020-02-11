@@ -39,14 +39,6 @@ const handleCompleted = (name,task) => {
     window.location = "/"
 }
 
-const saveTodos = (save) => {
-
-    console.log("This will send " + save + " to the api.")
-}
-
-// const Todos = require("../todos.json")
-let save = "blahhhh";
-
     return (
         <Fragment>
                 <Col xs='12' md='4' >
@@ -58,7 +50,7 @@ let save = "blahhhh";
                         <h3>In progress: </h3>
                             <ul>
                                 {bothProg.map((todo,i) =>
-                                    <p key={i} onClick={e => handleCompleted("Both",todo, e)}>{todo}</p>
+                                    <p key={i} onClick={e => handleCompleted("Both",todo)}>{todo}</p>
                                     )}
                             </ul>
                         </div>
@@ -71,7 +63,6 @@ let save = "blahhhh";
                             </ul>
                         </div>
                         </div>
-                        <Button onClick={e => saveTodos(save, e)} style={{marginTop: "auto"}} color="primary" className="bottomButton">Save!</Button>
                     </Card>
                     </div>
                 </Col>
@@ -98,7 +89,6 @@ let save = "blahhhh";
                             </ul>
                         </div>
                         </div>
-                        <Button style={{marginTop: "auto"}} color="primary" className="bottomButton">Save!</Button>
                     </Card>
                     </div>
                 </Col>
@@ -124,7 +114,6 @@ let save = "blahhhh";
                             </ul>
                         </div>
                         </div>
-                        <Button style={{marginTop: "auto"}} color="primary" className="bottomButton">Save!</Button>
                     </Card>
                     </div>
                 </Col>
