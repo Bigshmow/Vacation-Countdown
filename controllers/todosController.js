@@ -15,6 +15,12 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },
+  update: function(req, res) {
+      db.Todo
+        .updateOne({ name: "Both"}, {$set:{complete: "weeeeeerk"}})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+  },
   findById: function(req, res) {
     db.Todo
       .findById(req.params.id)

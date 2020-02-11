@@ -5,15 +5,15 @@ import "../styles.css";
 
 export const Addtask = props => {
 
-    const [newTask, setTask] = useState("")
-    const [newName, setName] = useState("")
+    const [task, setTask] = useState("task")
+    const [name, setName] = useState("Both")
 
     const handleListUpdate = () => {
         // psuedo for now
         // set state with new todos item for person id
-        alert("Added new task: " + newTask + " for " + newName)
+        alert("Added new task: " + task + " for " + name)
         // call addTodo and update state
-        API.addTodo(newName, newTask)
+        API.addTodo()
         // .then(window.location.href="/")
     }
     return (
@@ -24,13 +24,13 @@ export const Addtask = props => {
                         <Input
                         placeholder="Add a task: "
                         type="text"
-                        value={newTask}
+                        value={task}
                         onChange={e => setTask(e.target.value)}
                         />
                         <Input
                         placeholder="For whom? "
                         type="text"
-                        value={newName}
+                        value={name}
                         onChange={e => setName(e.target.value)}
                         />
                 </FormGroup>

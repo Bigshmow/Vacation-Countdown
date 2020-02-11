@@ -11,9 +11,7 @@ router.route("/:name")
   .get(todosController.findOne);
 
 // Matches with "/api/todos/:name/:task"
-router
-  .route("/:name/:task")
-  .get(todosController.findById)
-  .delete(todosController.remove);
+router.route("/")
+  .put(todosController.update);
 
 module.exports = router;
