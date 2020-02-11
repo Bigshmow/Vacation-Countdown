@@ -6,10 +6,6 @@ router.route("/")
   .get(todosController.findAll)
   .post(todosController.create);
 
-// Matches with "/api/todos/:name"
-// router.route("/:name")
-//   .get(todosController.findOne);
-
 // Matches with "/api/todos/:name/:task"
 router.route("/:name/:task")
   .put(todosController.updateProgress);

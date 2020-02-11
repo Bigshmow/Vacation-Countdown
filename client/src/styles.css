@@ -38,6 +38,7 @@
 
 .todoCard {
   display: flex;
+  margin-bottom: 20px;
   min-height: 40vh;
 }
   .todoCard:hover {
