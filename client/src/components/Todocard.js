@@ -33,31 +33,10 @@ useEffect(() => {
         .then( res => setDevinC(res.data[2].complete)); 
 },[]);
 
-const bothPush = (todo) => {
-    const thing = todo;
-    let newCarr = [...bothComp];
-    let newParr = bothProg.filter( thing => thing !== todo )
-    newCarr.push(thing)
-    setBothC(newCarr)
-    setBothP(newParr)
-}
-
-const denisePush = (todo) => {
-    const thing = todo;
-    let newCarr = [...deniseComp];
-    let newParr = deniseProg.filter( thing => thing !== todo )
-    newCarr.push(thing)
-    setDeniseC(newCarr)
-    setDeniseP(newParr)
-}
-
-const devinPush = (todo) => {
-    const thing = todo;
-    let newCarr = [...devinComp];
-    let newParr = devinProg.filter( thing => thing !== todo )
-    newCarr.push(thing)
-    setDevinC(newCarr)
-    setDevinP(newParr)
+const handleCompleted = (name,task) => {
+    API.addComplete(name,task)
+    API.remProg(name,task)
+    window.location = "/"
 }
 
 const saveTodos = (save) => {
@@ -67,6 +46,7 @@ const saveTodos = (save) => {
 
 // const Todos = require("../todos.json")
 let save = "blahhhh";
+
     return (
         <Fragment>
                 <Col xs='12' md='4' >
@@ -78,7 +58,7 @@ let save = "blahhhh";
                         <h3>In progress: </h3>
                             <ul>
                                 {bothProg.map((todo,i) =>
-                                    <p key={i} onClick={e => bothPush(todo, e)}>{todo}</p>
+                                    <p key={i} onClick={e => handleCompleted("Both",todo, e)}>{todo}</p>
                                     )}
                             </ul>
                         </div>
@@ -105,7 +85,7 @@ let save = "blahhhh";
                         <h3>In progress: </h3>
                             <ul>
                                 {deniseProg.map((todo,i) =>
-                                    <p key={i} onClick={e => denisePush(todo, e)}>{todo}</p>
+                                    <p key={i} onClick={e => handleCompleted("Denise",todo, e)}>{todo}</p>
                                     )}
                             </ul>
                         </div>
@@ -131,7 +111,7 @@ let save = "blahhhh";
                         <h3>In progress: </h3>
                             <ul>
                                 {devinProg.map((todo,i) =>
-                                    <p key={i} onClick={e => devinPush(todo, e)}>{todo}</p>
+                                    <p key={i} onClick={e => handleCompleted("Devin",todo, e)}>{todo}</p>
                                     )}
                             </ul>
                         </div>

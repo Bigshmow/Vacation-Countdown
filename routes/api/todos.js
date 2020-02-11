@@ -12,7 +12,12 @@ router.route("/")
 
 // Matches with "/api/todos/:name/:task"
 router.route("/:name/:task")
-  .put(todosController.updateProgress)
-  .put(todosController.updateComplete);
+  .put(todosController.updateProgress);
 
+router.route("/completed/:name/:task")
+  .put(todosController.addComplete);
+
+router.route("/progress/:name/:task")
+  .put(todosController.remProg);
+  
 module.exports = router;

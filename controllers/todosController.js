@@ -21,11 +21,17 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
   },
-  updateComplete: function (req, res) {
+  addComplete: function (req, res) {
       db.Todo
         .updateOne({ name: req.params.name }, {$push:{complete: req.params.task}})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
+  },
+  remProg: function (req, res) {
+    db.Todo
+      .updateOne({ name: req.params.name }, {$pull:{inProgress: req.params.task}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
     db.Todo
