@@ -17,6 +17,12 @@ export default {
   addComplete: function(name,task) {
     return axios.put("/api/todos/completed/" + name + "/" + task);
   },
+  addProg: function(name,task) {
+    return axios.put("/api/todos/addprogress/" + name + "/" + task);
+  },
+  remComplete: function(name,task) {
+    return axios.put("/api/todos/undo/" + name + "/" + task);
+  },
   // Removes todo from inProgress
   remProg: function(name,task) {
     return axios.put("/api/todos/progress/" + name + "/" + task);

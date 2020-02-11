@@ -39,6 +39,12 @@ const handleCompleted = (name,task) => {
     window.location = "/"
 }
 
+const handleUndo = (name,task) => {
+    API.addProg(name,task)
+    API.remComplete(name,task)
+    window.location = "/"
+}
+
     return (
         <Fragment>
                 <Col xs='12' md='4' >
@@ -58,7 +64,7 @@ const handleCompleted = (name,task) => {
                         <h3>Completed: </h3>
                             <ul>
                                 {bothComp.map((todo,i) =>
-                                    <p key={i} >{todo}</p>
+                                    <p key={i} onClick={e => handleUndo("Both",todo)}>{todo}</p>
                                     )}
                             </ul>
                         </div>
@@ -84,7 +90,7 @@ const handleCompleted = (name,task) => {
                         <h3>Completed: </h3>
                             <ul>
                                 {deniseComp.map((todo,i) =>
-                                    <p key={i} >{todo}</p>
+                                    <p key={i} onClick={e => handleUndo("Denise",todo)}>{todo}</p>
                                     )}
                             </ul>
                         </div>
@@ -109,7 +115,7 @@ const handleCompleted = (name,task) => {
                         <h3>Completed: </h3>
                             <ul>
                                 {devinComp.map((todo,i) =>
-                                    <p key={i} >{todo}</p>
+                                    <p key={i} onClick={e => handleUndo("Devin",todo)}>{todo}</p>
                                     )}
                             </ul>
                         </div>
