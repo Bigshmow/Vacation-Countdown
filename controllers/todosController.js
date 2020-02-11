@@ -9,12 +9,6 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findOne: function(req, res) {
-      db.Todo
-        .findOne({name: req.params.name})
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-  },
   updateProgress: function(req, res) {
       db.Todo
         .updateOne({ name: req.params.name }, {$push:{inProgress: req.params.task }})
@@ -30,18 +24,6 @@ module.exports = {
   remProg: function (req, res) {
     db.Todo
       .updateOne({ name: req.params.name }, {$pull:{inProgress: req.params.task}})
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findById: function(req, res) {
-    db.Todo
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
-    db.Todo
-      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
