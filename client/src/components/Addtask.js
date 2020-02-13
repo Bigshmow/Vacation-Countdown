@@ -13,7 +13,7 @@ export const Addtask = props => {
             API.addTodo(name,task)
             window.location = "/"
         } else {
-            alert("We can only add tasks for: Both, Denise, or Devin. \n Please enter one of those names.")
+            alert("We can only add tasks for: Both, Denise, or Devin. \n Please enter one of those names, thank you.")
         }
     }
 
@@ -23,21 +23,23 @@ export const Addtask = props => {
                 <Card className="shadow" style={{ borderColor: '#333'}}>
                 <FormGroup>
                         <Input
-                        placeholder="Add a task: "
+                        className="text-center"
+                        placeholder="What is the task? (enter here)"
                         type="text"
                         value={task}
                         name="task"
                         onChange={e => setTask(e.target.value)}
                         />
                         <Input
-                        placeholder="For whom? "
+                        className="text-center"
+                        placeholder="For whom? (enter here)"
                         type="text"
                         value={name}
                         name="name"
                         onChange={e => setName(e.target.value)}
                         />
                 </FormGroup>
-                        <Button onClick={e => handleListUpdate(name,task)} color="primary" size="large"><h3>Add this task!</h3></Button>
+                        <Button onClick={e => handleListUpdate(name,task)} color="primary" className="mb-3 mr-3 ml-3" size="large"><h3>Add this task!</h3></Button>
                 </Card>
             </Col>
         </Fragment>
