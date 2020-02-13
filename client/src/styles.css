@@ -14,12 +14,20 @@
   justify-content: space-between;
 }
 
+.compButton {
+  margin-bottom: 5px;
+}
+
 .mainRow {
   min-height: 25vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.progButton {
+  margin-bottom: 5px;
 }
 
 .progCard {
