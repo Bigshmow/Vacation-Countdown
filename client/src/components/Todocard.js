@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState} from "react";
-import { Card, Col} from "reactstrap";
+import { Button, Card, Col} from "reactstrap";
 import API from "../utils/API";
 import "../styles.css";
 
@@ -53,20 +53,20 @@ const handleUndo = (name,task) => {
                         <h1 className="todo text-center">To-Do: {progArr[0]}</h1>
                         <div className="boxCard">
                         <div className="progCard">
-                        <h3>In progress: </h3>
-                            <ul>
+                        <h3 className="text-center">In progress: </h3>
+                            <div className="text-center">
                                 {bothProg.map((todo,i) =>
-                                    <p key={i} onClick={e => handleCompleted("Both",todo)}>{todo}</p>
+                                    <Button color="warning" className="progButton" key={i} onClick={e => handleCompleted("Both",todo)}>{todo}</Button>
                                     )}
-                            </ul>
+                            </div>
                         </div>
                         <div className="compCard">
-                        <h3>Completed: </h3>
-                            <ul>
+                        <h3 className="text-center">Completed: </h3>
+                        <div className="text-center">
                                 {bothComp.map((todo,i) =>
-                                    <p key={i} onClick={e => handleUndo("Both",todo)}>{todo}</p>
+                                    <Button color="success" className="compButton" key={i} onClick={e => handleUndo("Both",todo)}>{todo}</Button>
                                     )}
-                            </ul>
+                            </div>
                         </div>
                         </div>
                     </Card>
@@ -79,20 +79,20 @@ const handleUndo = (name,task) => {
                         <div className="boxCard">
 
                         <div className="progCard">
-                        <h3>In progress: </h3>
-                            <ul>
+                        <h3 className="text-center">In progress: </h3>
+                        <div className="text-center">
                                 {deniseProg.map((todo,i) =>
-                                    <p key={i} onClick={e => handleCompleted("Denise",todo, e)}>{todo}</p>
+                                    <Button color="warning" className="progButton" key={i} onClick={e => handleCompleted("Denise",todo, e)}>{todo}</Button>
                                     )}
-                            </ul>
+                            </div>
                         </div>
                         <div className="compCard">
-                        <h3>Completed: </h3>
-                            <ul>
+                        <h3 className="text-center">Completed: </h3>
+                        <div className="text-center">
                                 {deniseComp.map((todo,i) =>
-                                    <p key={i} onClick={e => handleUndo("Denise",todo)}>{todo}</p>
+                                    <Button color="success" className="compButton" key={i} onClick={e => handleUndo("Denise",todo)}>{todo}</Button>
                                     )}
-                            </ul>
+                            </div>
                         </div>
                         </div>
                     </Card>
@@ -104,20 +104,20 @@ const handleUndo = (name,task) => {
                         <h1 className="todo text-center">To-Do: {progArr[2]}</h1>
                         <div className="boxCard">
                         <div className="progCard">
-                        <h3>In progress: </h3>
-                            <ul>
+                        <h3 className="text-center">In progress: </h3>
+                        <div className="text-center">
                                 {devinProg.map((todo,i) =>
-                                    <p key={i} onClick={e => handleCompleted("Devin",todo, e)}>{todo}</p>
+                                    <Button color="warning" className="progButton" key={i} onClick={e => handleCompleted("Devin",todo, e)}>{todo}</Button>
                                     )}
-                            </ul>
+                            </div>
                         </div>
                         <div className="compCard">
-                        <h3>Completed: </h3>
-                            <ul>
+                        <h3 className="text-center">Completed: </h3>
+                        <div className="text-center">
                                 {devinComp.map((todo,i) =>
-                                    <p key={i} onClick={e => handleUndo("Devin",todo)}>{todo}</p>
+                                    <Button color="success" className="compButton" key={i} onClick={e => handleUndo("Devin",todo)}>{todo}</Button>
                                     )}
-                            </ul>
+                            </div>
                         </div>
                         </div>
                     </Card>
