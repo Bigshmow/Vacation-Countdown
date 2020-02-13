@@ -37,7 +37,7 @@ export const Addtask = props => {
                         onChange={e => setName(e.target.value)}
                         />
                 </FormGroup>
-                        <Button onClick={e => handleListUpdate(name,task)} color="success" size="large"><h3>Add this task!</h3></Button>
+                        <Button onClick={e => handleListUpdate(name,task)} color="primary" size="large"><h3>Add this task!</h3></Button>
                 </Card>
             </Col>
         </Fragment>
