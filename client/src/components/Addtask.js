@@ -9,11 +9,24 @@ export const Addtask = props => {
     const [name, setName] = useState("")
 
     const handleListUpdate = (name,task) => {
-        if (name === "Both" | "Denise" | "Devin") {
-            API.addTodo(name,task)
-            window.location = "/"
-        } else {
-            alert("We can only add tasks for: Both, Denise, or Devin. \n Please enter one of those names, thank you.")
+
+        switch (name) {
+            case "Both":
+                API.addTodo(name,task)
+                window.location = "/"
+                break;
+            case "Denise":
+                API.addTodo(name,task)
+                window.location = "/"
+                break;
+            case "Devin":
+                API.addTodo(name,task)
+                window.location = "/"
+                break;
+        
+            default:
+                alert("We can only add tasks for: Both, Denise, or Devin. \n Please enter one of those names, thank you.")
+                break;
         }
     }
 
