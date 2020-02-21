@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "moment-timezone": "^0.5.27",
-    "mongoose": "^5.8.11"
+    "mongoose": "^5.8.11",
+    "set-value": "^3.0.1"
   }
 }
