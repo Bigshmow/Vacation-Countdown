@@ -1,5 +1,8 @@
 import React, { Fragment, useEffect, useState} from "react";
-import { Button, Card, Col} from "reactstrap";
+import { Button, Card, Col, Row} from "reactstrap";
+import { useDrop, useDrag } from "react-dnd";
+import { Complete } from "../components/Complete.js";
+import { inProgress } from "../components/Inprogress";
 import API from "../utils/API";
 import "../styles.css";
 
@@ -45,6 +48,29 @@ const handleUndo = (name,task) => {
     window.location = "/"
 }
 
+const[{ isOver }, drop] = useDrop({
+    accept: "todo",
+    drop: (item, monitor) => {
+        console.log("drop", item);
+    },
+    collect: (monitor) => ({
+        isOver: monitor.isOver(),
+        canDrop: monitor.canDrop(),
+    })
+});
+
+const [{isDragging}, drag] = useDrag({
+    item: {
+        type: "todo",
+        id: props.id,
+        src: props.src,
+        name: props.name
+    },
+    collect: monitor => ({
+        isDragging: !!monitor.isDragging()
+    }),
+})
+
     return (
         <Fragment>
                 <Col xs='12' md='4' >
@@ -52,7 +78,7 @@ const handleUndo = (name,task) => {
                     <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
                         <h1 className="todo text-center">To-Do: {progArr[0]}</h1>
                         <div className="boxCard">
-                        <div className="progCard">
+                        <div ref={drop} className="progCard">
                         <h3 className="text-center">In progress: </h3>
                             <div className="text-center">
                                 {bothProg.map((todo,i) =>
@@ -78,7 +104,7 @@ const handleUndo = (name,task) => {
                         <h1 className="todo text-center">To-Do: {progArr[1]}</h1>
                         <div className="boxCard">
 
-                        <div className="progCard">
+                        <div ref={drop} className="progCard">
                         <h3 className="text-center">In progress: </h3>
                         <div className="text-center">
                                 {deniseProg.map((todo,i) =>
@@ -103,7 +129,7 @@ const handleUndo = (name,task) => {
                     <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
                         <h1 className="todo text-center">To-Do: {progArr[2]}</h1>
                         <div className="boxCard">
-                        <div className="progCard">
+                        <div ref={drop} className="progCard">
                         <h3 className="text-center">In progress: </h3>
                         <div className="text-center">
                                 {devinProg.map((todo,i) =>

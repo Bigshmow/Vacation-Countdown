@@ -20,6 +20,32 @@
   margin-left: 5px;
 }
 
+.dragSource {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: orange;
+  border: black 1px solid;
+  margin-bottom: 25px;
+  min-height: 350px;
+  width: auto;
+}
+
+.dragTarget {
+  display: flex;
+  color: white;
+  background-color: green;
+  border: black 1px solid;
+  margin-bottom: 25px;
+  min-height: 350px;
+  width: auto;
+}
+
+.centerThings {
+  display: flex;
+  justify-content: center;
+}
+
 .mainRow {
   min-height: 25vh;
   display: flex;
@@ -56,3 +82,16 @@
   .todoCard:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+
+.todoBox {
+  width: auto;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.whiteBorder {
+  border-bottom: white 2px solid;
+}
