@@ -4,7 +4,7 @@ import '../styles.css';
 
 export const Countdown = props => {
     const handleTime = () => {
-        const leaveDate = new Date('May 07, 2020 13:43:00 -0800')
+        const leaveDate = new Date('Feb 28, 2020 13:43:00 -0800')
         const diff = leaveDate - +new Date();
         let timeLeft = {};
         
