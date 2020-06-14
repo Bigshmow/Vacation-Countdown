@@ -1,8 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Col, Row } from 'reactstrap';
 import '../styles.css';
 
-export const Inprogress = props => {
+export const Inprogress = () => {
     return (
         <Fragment>
             <Col xs="12">

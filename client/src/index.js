@@ -8,12 +8,35 @@ import store from './store'
 
 // React-dnd
 import { DndProvider } from "react-dnd";
-import Backend from "react-dnd-html5-backend";
+// import Backend from "react-dnd-html5-backend";
 // Multi backend
-import MultiBackend from 'react-dnd-multi-backend';
-import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import MultiBackend, { TouchTransition, MouseTransition } from 'react-dnd-multi-backend';
+// import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const HTML5toTouch = {
+    backends: [
+      {
+        backend: TouchBackend,
+        options: {
+          scrollAngleRanges: [
+            { start: 30, end: 150 },
+            { start: 210, end: 330 }
+          ]
+        },
+        preview: true,
+        transition: TouchTransition,
+      },
+      {
+        backend: HTML5Backend,
+        transition: MouseTransition,
+        preview: true
+      }
+    ]
+  };
 
     ReactDOM.render(
         <Provider store={store}>

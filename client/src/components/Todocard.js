@@ -48,16 +48,16 @@ const handleUndo = (name,task) => {
     window.location = "/"
 }
 
-const[{ isOver }, drop] = useDrop({
-    accept: "todo",
-    drop: (item, monitor) => {
-        console.log("drop", item);
-    },
-    collect: (monitor) => ({
-        isOver: monitor.isOver(),
-        canDrop: monitor.canDrop(),
-    })
-});
+// const[{ isOver }, drop] = useDrop({
+//     accept: "todo",
+//     drop: (item, monitor) => {
+//         console.log("drop", item);
+//     },
+//     collect: (monitor) => ({
+//         isOver: monitor.isOver(),
+//         canDrop: monitor.canDrop(),
+//     })
+// });
 
 const [{isDragging}, drag] = useDrag({
     item: {
@@ -78,7 +78,7 @@ const [{isDragging}, drag] = useDrag({
                     <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
                         <h1 className="todo text-center">To-Do: {progArr[0]}</h1>
                         <div className="boxCard">
-                        <div ref={drop} className="progCard">
+                        <div className="progCard">
                         <h3 className="text-center">In progress: </h3>
                             <div className="text-center">
                                 {bothProg.map((todo,i) =>
@@ -104,7 +104,7 @@ const [{isDragging}, drag] = useDrag({
                         <h1 className="todo text-center">To-Do: {progArr[1]}</h1>
                         <div className="boxCard">
 
-                        <div ref={drop} className="progCard">
+                        <div className="progCard">
                         <h3 className="text-center">In progress: </h3>
                         <div className="text-center">
                                 {deniseProg.map((todo,i) =>
@@ -129,7 +129,7 @@ const [{isDragging}, drag] = useDrag({
                     <Card className="todoCard shadow" style={{ borderColor: '#333' }}>
                         <h1 className="todo text-center">To-Do: {progArr[2]}</h1>
                         <div className="boxCard">
-                        <div ref={drop} className="progCard">
+                        <div className="progCard">
                         <h3 className="text-center">In progress: </h3>
                         <div className="text-center">
                                 {devinProg.map((todo,i) =>
