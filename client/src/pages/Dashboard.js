@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'reactstrap';
 import { Addtask } from "../components/Addtask";
 import { Countdown } from '../components/Countdown';
 import { useSelector } from "react-redux";
 import { TodocardDND } from '../components/TodocardDND';
 import '../styles.css';
+import { set } from 'mongoose';
 
 export const Dashboard = props => {
 
     const todoData = useSelector(state => {
         return state.data.todoData
     })
+
+    const [both, setBoth] = useState([])
+
+    useEffect(() => {
+        setBoth(todoData.both)
+    },[todoData])
 
     return (
         <Container>
@@ -23,9 +30,9 @@ export const Dashboard = props => {
             </Row>
             <br></br>
             <Row>
-                <TodocardDND todoObj={todoData.both}/>
-                <TodocardDND todoObj={todoData.denise}/>
-                <TodocardDND todoObj={todoData.devin}/>
+                <TodocardDND path="both" todoObj={todoData.both}/>
+                <TodocardDND path="denise" todoObj={todoData.denise}/>
+                <TodocardDND path="devin" todoObj={todoData.devin}/>
             </Row>
         </Container>
     )

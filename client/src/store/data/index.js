@@ -3,45 +3,60 @@
 import gen, { requestActions } from '../calls';
 
 export const ROOMDATA_GET = requestActions('ROOMDATA_GET');
-const SET_TODO_COMPLETE = gen("SET_TODO_COMPLETE")
+const SET_TODO = gen("SET_TODO")
 
 // Default state
 const defaultState = {
 
-    todoData : {
-    
-        both: {
-            name: "Both",
-            todos: [
-                {title: "both's first todo", complete: false}
-            ]
-        },
-    
-        denise: {
-            name: "Denise",
-            todos: [
-                {title: "denise's first todo", complete: false}
-            ]
-        },
-    
-        devin: {
-            name: "Devin",
-            todos: [
-                {title: "devin's first todo", complete: false}
-            ]
-        }
+  todoData: {
+
+    both: {
+      name: "Both",
+      todos: [
+        { title: "both's first todo", complete: false },
+        { title: "both's second todo", complete: false }
+      ]
+    },
+
+    denise: {
+      name: "Denise",
+      todos: [
+        { title: "denise's first todo", complete: false }
+      ]
+    },
+
+    devin: {
+      name: "Devin",
+      todos: [
+        { title: "devin's first todo", complete: false }
+      ]
     }
+  }
 };
 
 // Reducer
 export default function reducer(state = defaultState, payload) {
   switch (payload.type) {
-    case ROOMDATA_GET.START:
-      return { ...state, isLoadingRoomData: true, errorRoomData: null };
-    case ROOMDATA_GET.SUCCESS:
-      return { ...state, isLoadingRoomData: false, roomData: payload.data };
-    case ROOMDATA_GET.FAILURE:
-      return { ...state, isLoadingRoomData: false, errorRoomData: payload.error };
+    case SET_TODO:
+      const { key, title, value } = payload;
+      const update = {title:title, complete:value === false ? true : false}
+      console.log(update);
+      const todos = state.todoData[key].todos
+      todos.filter(todo => todo === update)
+      console.log(todos)
+      const latestProg = [...state.todoData[key].todos, value]
+      console.log(latestProg)
+      return {
+        ...state,
+        todoData: {
+          ...state.todoData,
+          [key]: {
+            ...state.todoData[key],
+            todos: latestProg
+          }
+        }
+      }
+
     default:
       return state;
   }
@@ -54,9 +69,11 @@ export function roomDataGet() {
   };
 }
 
-export function handleComplete(todo) {
-    return {
-      type: SET_TODO_COMPLETE,
-      todo
-    };
-  }
+export function handleComplete(key, title, value) {
+  return {
+    type: SET_TODO,
+    key,
+    title,
+    value
+  };
+}
