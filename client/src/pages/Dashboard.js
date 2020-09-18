@@ -5,7 +5,6 @@ import { Countdown } from '../components/Countdown';
 import { useSelector } from "react-redux";
 import { TodocardDND } from '../components/TodocardDND';
 import '../styles.css';
-import { set } from 'mongoose';
 
 export const Dashboard = props => {
 
@@ -17,12 +16,12 @@ export const Dashboard = props => {
 
     useEffect(() => {
         setBoth(todoData.both)
-    },[todoData])
+    }, [todoData])
 
     return (
         <Container>
             <Row className="mainRow">
-                <Countdown/>
+                <Countdown />
             </Row>
             <br></br>
             <Row className="addTask">
@@ -30,9 +29,9 @@ export const Dashboard = props => {
             </Row>
             <br></br>
             <Row>
-                <TodocardDND path="both" todoObj={todoData.both}/>
-                <TodocardDND path="denise" todoObj={todoData.denise}/>
-                <TodocardDND path="devin" todoObj={todoData.devin}/>
+                <TodocardDND path="both" todoObj={todoData.both} />
+                <TodocardDND path="denise" todoObj={todoData.denise} />
+                <TodocardDND path="devin" todoObj={todoData.devin} />
             </Row>
         </Container>
     )

@@ -41,9 +41,9 @@ export default function reducer(state = defaultState, payload) {
       const { key, title, value } = payload;
       const update = {title:title, complete:value === false ? true : false}
       console.log(update);
-      const todos = state.todoData[key].todos
-      todos.filter(todo => todo === update)
-      console.log(todos)
+      const todos = state.todoData[key].todos;
+      const filterTodo = todos.filter(todo => todo !== update);
+      console.log(filterTodo);
       const latestProg = [...state.todoData[key].todos, value]
       console.log(latestProg)
       return {
