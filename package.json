@@ -26,6 +26,6 @@
     "minimist": "^1.2.5",
     "moment-timezone": "^0.5.28",
     "mongoose": "^5.9.10",
-    "set-value": "^3.0.2"
+    "set-value": "^4.0.1"
   }
 }
